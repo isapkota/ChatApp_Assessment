@@ -19,6 +19,7 @@ Describe the top level software components and their interactions/relationships.
 Use UML package diagrams and/or layer diagrams and/or interface diagrams.
 Describe also the operating systems on which the software runs.
 #### 1.2.3.1 API Server
+![ER-Diagram](img/BasicER-ChatApp.png)
 #### 1.2.3.2 Chat Server
 #### 1.2.3.3 Chat Client
 
