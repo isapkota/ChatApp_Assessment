@@ -13,7 +13,8 @@ It describes:
 ### 1.2.1 Architecture Overview
 It’s a basic chat application where any mobile or desktop user can resister and start chatting with another registered user. User can chat with each other whenever he/she is add to his friend circle. The chat can be live if the user is online otherwise the message is shown whenever the user gets online. There will be two or more user involved in the system. One is the source of message and second one is target which can be multiple.
 ### 1.2.2 Physical Architecture Overview
-Describe the hardware components on which software runs and their interactions/relationships
+Describe the hardware components on which software runs and their interactions/relationships.
+![ER-Diagram](img/Development%20WorkFlow.png)
 ### 1.2.3 Logical Architecture Overview
 Describe the top level software components and their interactions/relationships.
 Use UML package diagrams and/or layer diagrams and/or interface diagrams.
