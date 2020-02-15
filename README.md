@@ -128,7 +128,8 @@ There is need of both Web and mobile app for this one. For my personal view, goi
 The testing activities are to be done in parallel with the development process along with the unit testing. Other than this each requirement functionality should be tested properly before taking it to production. Some of the test items are listed below along with its scope.
 
 ### Main Test Item
-1. 'Web App' - The Chat Application developed
+*1. 'Web App'* - The Chat Application developed
+
 Items to be tested with application. Each item has to be tested properly and accessible to a registered user.
 - User Profile
 - Chatting
@@ -142,7 +143,23 @@ Items to be tested with application. Each item has to be tested properly and acc
 - Login
 - Logout
 
-2. 'API' - Supporting Infrastructure for Application
+*2. 'API'* - Supporting Infrastructure for Application
 Every end point for each item listed above should be tested with proper and improper data so as to get the consequences of each action.
 
-
+### Features to be tested
+Features | Priority | Description
+-------- | -------- | -----------
+Create Account | 1 | To make user able to register for Chat App
+Login | 1 | Login as Authenticated User
+Logout| 1 | Get out of system
+Find Friend | 2 | Searching for friend
+Add Friend | 2 | Connect with friend
+Remove Friend | 3 | Disconnect with friend
+Block Friend | 3 | Remove unwanted message
+Personal Chat | 1 | Message with friend
+Group Chat | 2 | Message with group
+Share File | 3 | Share files
+Appropriate Messaging | 3 | Check for proper message on error and invalid inputs
+Database | 2 | Technical check with data on database 
+Encryption | 4 | Each message must be encrypted on save and received decrypted on request
+Ensure the chat respond on minimal time | 4 | Ensure message is delivered on time
