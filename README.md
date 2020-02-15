@@ -97,7 +97,9 @@ Logically application has three basic components one is api server *'API Compone
 
 ![ER-Diagram](img/ApplicationWorkflow.png)
 #### API Component
-'API' is responsible for communicating with 'Web App' for saving and receiving data. There must not be other way out to save and retrieve data except 'API'. 'API' consists of two layers 'Data Layer' and 'Controller' where controller is responsible for handling request and response from 'Web App' where as data layer is responsible for handling (saving and receiving) data from database. The process can be easily be understood in the above 'Application Work Flow' diagram.
+'API' is responsible for communicating with 'Web App' for saving and receiving data. There must not be other way out to save and retrieve data except 'API'. 'API' consists of two layers 'Data Layer' and 'Controller' where controller is responsible for handling request and response from 'Web App' where as data layer is responsible for handling (saving and receiving) data from database. 'API' should be made secure so as to block the unnecessary access to the data, basic authentication using username and password can be used for API security but to make more secure OAuth 2.0 can be used.
+
+The process can be easily be understood in the above 'Application Work Flow' diagram.
 #### Database Component
 'Data' is completely a database server responsible for storing the data in the form of tables and columns. All the data tables and their columns are defined in Data Entity ER-Diagram defined above. This component is just available or can be accessed through data layer of 'API'.
 #### Web Component
