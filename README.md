@@ -163,3 +163,18 @@ Appropriate Messaging | 3 | Check for proper message on error and invalid inputs
 Database | 2 | Technical check with data on database 
 Encryption | 4 | Each message must be encrypted on save and received decrypted on request
 Ensure the chat respond on minimal time | 4 | Ensure message is delivered on time
+
+### Test Tools 
+Selenium Web Browser java automation tool can be used for automating the test. Other than that, different javascript tools such as Protractor, Cypress are also introduced for browser automation. NUnit or xUnit can be used for unit testing during the development. Every features need step by step methods of testing before the development process starts.
+
+### Item Pass Fail Criteria
+The test process will be completed when the project owner will be satisﬁed with the result of the test. For this, at least 90% of test cases must pass; all functionalities must be covered in those test cases and most of all, high and medium severity defects must be detected and ﬁxed. Minor defects can be ignored, but with the assurance that it does not lead to severe defect. The project owner will decide whether the detected defects and criticality will cause the release of Chat Application of version 1.0 to delay. The project owner can decide the deployment with known bugs but again there must be at least 90% test cases are passed and major feature must not halt the application.
+
+### User Manual
+On completion of first level of deployment a user manual using the screen shots of the application will be created for users to use all the features the application.
+
+## Deployment
+Continuous Integration will be implemented so as to get an easy deployment strategy. Three environments QA, Staging and Production with similar architecture are defined and prepared for deployment. Each deployment occurs on git push on different branches. Developers push the code to respective branch for deployment. There must be an manual process just to deploy for production.  The process will be defined by the team on project kick off meeting.
+
+## Conclusion
+There must be a room of improvement of the application. As it deals with communication, we must have other means of communication implementation like voice chat, video chat, group call etc. There must be flexibility of enhancing the application to the bigger approach afterwards.
