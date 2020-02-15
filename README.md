@@ -80,21 +80,30 @@ Activity diagram below shows an user workflow of the application starting from a
 ![Activity Diagram](img/Activitydiagram.png)
 
 [Note: Other diagram specific to different activity in the application can be displayed and explained if necessary]
-## 1.2 Architecture
-### 1.2.1 Architecture Overview
+
+### Entity Relationship Diagram
+ER-Diagram below displays the relation between data entity required for the applications. It just explains the database entities involved. 
+![ER-Diagram](img/BasicER-ChatApp.png)
+
+## Architecture
+### Architecture Overview
 It’s a basic chat application where any mobile or desktop user can resister and start chatting with another registered user. User can chat with each other whenever he/she is add to his friend circle. The chat can be live if the user is online otherwise the message is shown whenever the user gets online. There will be two or more user involved in the system. One is the source of message and second one is target which can be multiple.
 
-### 1.2.2 Physical Architecture Overview
-Describe the hardware components on which software runs and their interactions/relationships.
-![Development Workflow](img/Development%20WorkFlow.png)
+### Physical Architecture Overview
+Physically we can have three different server for database, api and web application which can be in same enterprise server or single cloud server. ASP.NET Web API can be hosted on Amazon Web Component service for Web API and Data Component service for database can be an easier option for easy continuous integration.
+
 ### 1.2.3 Logical Architecture Overview
-Describe the top level software components and their interactions/relationships.
-Use UML package diagrams and/or layer diagrams and/or interface diagrams.
-Describe also the operating systems on which the software runs.
-#### 1.2.3.1 API Server
-![ER-Diagram](img/BasicER-ChatApp.png)
-#### 1.2.3.2 Chat Server
-#### 1.2.3.3 Chat Client
+Logically application has three basic components one is api server *'API Component'* which is called *'API'* below. build with ASP.NET MVC Web API architecture. API stores and receives the data from another component *'Database Component'* which is called *'Data'* below. 'API' receives the request from web application and responds back to the web application which is third component called *'Web Component'* which is called *'Web App'*.
+
+![ER-Diagram](img/ApplicationWorkflow.png)
+#### API Component
+'API' is responsible for communicating with 'Web App' for saving and receiving data. There must not be other way out to save and retrieve data except 'API'. 'API' consists of two layers 'Data Layer' and 'Controller' where controller is responsible for handling request and response from 'Web App' where as data layer is responsible for handling (saving and receiving) data from database. The process can be easily be understood in the above 'Application Work Flow' diagram.
+#### Database Component
+'Data' is completely a database server responsible for storing the data in the form of tables and columns. All the data tables and their columns are defined in Data Entity ER-Diagram defined above. This component is just available or can be accessed through data layer of 'API'.
+#### Web Component
+'Web App' is a web chat application consisting of different pages from authentication to different dashboard activities. There will be a dashboard for normal user for managing friends, chatting and checking with history. There will be another admin dashboard for admin user so as to handle feedback and user profiles.
+
+'Web App' should contain two layers one is service layer for 'API' communication and UI Layer for client request processing. File handling (sharing) is completely handled by 'Web App' just file information is handled in database for user notification.
 
 ### Deployment Architecture
 
