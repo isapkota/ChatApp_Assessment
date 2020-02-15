@@ -92,7 +92,7 @@ It’s a basic chat application where any mobile or desktop user can resister an
 ### Physical Architecture Overview
 Physically we can have three different server for database, api and web application which can be in same enterprise server or single cloud server. ASP.NET Web API can be hosted on Amazon Web Component service for Web API and Data Component service for database can be an easier option for easy continuous integration.
 
-### 1.2.3 Logical Architecture Overview
+### Logical Architecture Overview
 Logically application has three basic components one is api server *'API Component'* which is called *'API'* below. build with ASP.NET MVC Web API architecture. API stores and receives the data from another component *'Database Component'* which is called *'Data'* below. 'API' receives the request from web application and responds back to the web application which is third component called *'Web Component'* which is called *'Web App'*.
 
 ![ER-Diagram](img/ApplicationWorkflow.png)
@@ -105,7 +105,44 @@ Logically application has three basic components one is api server *'API Compone
 
 'Web App' should contain two layers one is service layer for 'API' communication and UI Layer for client request processing. File handling (sharing) is completely handled by 'Web App' just file information is handled in database for user notification.
 
-### Deployment Architecture
+## Development Process
+Requirement and architecture defined above ultimately guide us to separate our development in two basic team. A team responsible for managing the 'API' who are further responsible for managing the database as well, another team looking after the 'Web App'. Two different git repository for these two different part needs to be managed so as there is complete separation of concern during development. Continuous Integration needs to be implemented with deployment to DEV or QA server on development merge in both the repository. Complete git flow needs to be managed during development so that there will be less conflict during merge.
 
+TDD(Test Driven Development) implementation on development can reduce the time for manual test. Automation on testing process can be implemented from day 1 of development and each unit of code must have its unit testing followed by integration testing for each functionality. Test automation for each pages of 'Web App' reduces the manual QA task except some required manual test on high complexity.
+
+Each developer should have to go through a cycle of pull request in development, staging and master branch. Automatically code must run unit tests and integration test after the pull request merge for clean deployment. Automation test should be run on each build so as to verify the deployment. A good code of conduct to be maintained before starting the development. A team meeting will define the code work flow and coding process and requirement of approving a pull request.
+
+There is just a single choice of using ASP.NET Web API for 'API' can have an option of using different databases like POST gres, mysql or any other but MS-SQL server which is best suit for ASP.NET Web API. 
+
+MS-SQL Server is the choosen option for the instance till data is handled by SQL Express. If application goes higher for serving thousand of users then other options may require. For the reason, a separate data layer which can be easily replaced by another one is to be created during development.
+
+'Web App' development can have an option of choosing any js framework (Angular, React  or Vue). Any of those three framework can be used on the basis of availability of developer and crusiality of the project. Angular can be an option for quick development. React can be the option for fast rendering as it works with virtual DOM and also can be a good one to go for react native for mobile app as architecture goes same for native. Vue also can be the option for easy learning curve and has existing feature of older frameworks and a complete MVMVM pattern is implemented within.
+
+Team should sit together to define the framework to be used on 'Web App' before starting the development. Availability of knowledge, crusiality of the application would define the framework. 
+
+There is need of both Web and mobile app for this one. For my personal view, going with React Js can be a good option. there is need of separation of concern on each View part of the application so as to change the view accordingly for web and mobile. Although two separate code base may require for native and mobile but can be quick second one after first one is developed.
+
+[Note: A sample of TDD based application for Web API created during previous assessment is kept for reference. https://github.com/isapkota/Seva_Assessment]
+
+## Test Plan
+The testing activities are to be done in parallel with the development process along with the unit testing. Other than this each requirement functionality should be tested properly before taking it to production. Some of the test items are listed below along with its scope.
+
+### Main Test Item
+1. 'Web App' - The Chat Application developed
+Items to be tested with application. Each item has to be tested properly and accessible to a registered user.
+- User Profile
+- Chatting
+- Group Chatting
+- Add Friend
+- Remove Friend
+- Block Friend
+- Unblock Friend
+- Find Friend
+- Register
+- Login
+- Logout
+
+2. 'API' - Supporting Infrastructure for Application
+Every end point for each item listed above should be tested with proper and improper data so as to get the consequences of each action.
 
 
