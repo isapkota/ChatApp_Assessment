@@ -1,2 +1,5 @@
-ER - Diagram
-Workflow diagram
+BasicER-ChatApp
+ApplicationWorkflow
+Activitydiagram
+ClassDiagram
+UseCase
