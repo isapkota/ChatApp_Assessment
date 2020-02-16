@@ -42,7 +42,7 @@ It describes:
     - Application must send messages instantly.
 
 ## Use Case Table
-![Use Case Diagram](img/usecase.png)
+![Use Case Diagram](img/use-case.png)
 ### Use Case Description
 #### Authentication 
 Both type of user admin and normal has to be authenticated through the system. Normal user has to register with his/her email address or phone number and need to be verified before logging in to the system
